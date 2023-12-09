@@ -1,0 +1,12 @@
+{
+  "name": "@local/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "exit 0"
+  },
+  "files": [
+    "./*.json"
+  ]
+}

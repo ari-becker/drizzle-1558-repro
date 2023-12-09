@@ -1,0 +1,36 @@
+{
+  "name": "@local/database",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build:types": "tsc --build",
+    "clean": "rm -rf dist/ ; rm -f tsconfig.tsbuildinfo",
+    "dev": "tsc --watch",
+    "lint:attw": "attw --pack .",
+    "type-check": "tsc --noEmit"
+  },
+  "exports": {
+    "./drizzle": {
+      "types": "./dist/drizzle/index.d.ts",
+      "default": "./dist/drizzle/index.js"
+    }
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.13.2",
+    "@local/tsconfig": "workspace:*",
+    "@types/node": "20.10.1",
+    "drizzle-kit": "0.20.6",
+    "eslint": "8.54.0",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.0",
+    "tsx": "4.6.1",
+    "typescript": "5.3.2"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "2.2.2",
+    "@t3-oss/env-core": "0.7.1",
+    "drizzle-orm": "0.29.1",
+    "postgres": "3.4.3",
+    "zod": "3.22.4"
+  }
+}

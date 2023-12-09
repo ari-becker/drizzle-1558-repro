@@ -1,0 +1,16 @@
+{
+  "extends": "./base.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Library",
+  "description": "Configuration for a library package, to be imported by an app",
+  "compilerOptions": {
+    "composite": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmit": false
+  },
+  "files": [],
+  "include": [],
+  "exclude": []
+}

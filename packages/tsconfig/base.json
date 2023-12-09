@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base",
+  "description": "All tsconfigs should extend from this one, which sets reasonable modern defaults",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "lib": ["es2022"],
+    "jsx": "preserve",
+    "module": "Node16",
+    "moduleDetection": "force",
+    "moduleResolution": "node16",
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": true
+  }
+}
