@@ -11,11 +11,13 @@
     "incremental": true,
     "sourceMap": true,
     "isolatedModules": true,
-    "lib": ["es2022"],
+    "lib": [
+      "es2022"
+    ],
     "jsx": "preserve",
-    "module": "Node16",
+    "module": "ESNext",
     "moduleDetection": "force",
-    "moduleResolution": "node16",
+    "moduleResolution": "node",
     "noEmit": true,
     "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,

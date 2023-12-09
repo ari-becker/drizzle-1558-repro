@@ -26,7 +26,7 @@ export const pgDrizzleAdapter = (
     createUser: async (data) => {
       return await client
         .insert(user)
-        .values({ ...data, id: createId() })
+        .values({ ...data, id: createId() } as any)
         .returning()
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         .then((res) => res[0]!)
@@ -52,9 +52,9 @@ export const pgDrizzleAdapter = (
     async createSession(data) {
       return await client
         .insert(session)
-        .values(data)
+        .values(data as any)
         .returning()
-        .then((res) => res[0]);
+        .then((res) => res[0]!);
     },
     async getSessionAndUser(data) {
       return await client
@@ -74,10 +74,10 @@ export const pgDrizzleAdapter = (
 
       return await client
         .update(user)
-        .set(data)
+        .set(data as any)
         .where(eq(user.id, data.id))
         .returning()
-        .then((res) => res[0]);
+        .then((res) => res[0]!);
     },
     async updateSession(data) {
       return await client
@@ -90,9 +90,9 @@ export const pgDrizzleAdapter = (
     async linkAccount(rawAccount) {
       const updatedAccount = await client
         .insert(account)
-        .values(rawAccount)
+        .values(rawAccount as any)
         .returning()
-        .then((res) => res[0]);
+        .then((res) => res[0]!);
 
       // Drizzle will return `null` for fields that are not defined.
       // However, the return type is expecting `undefined`.
@@ -127,7 +127,7 @@ export const pgDrizzleAdapter = (
         return null;
       }
 
-      return dbAccount.user;
+      return dbAccount.User;
     },
     async deleteSession(sessionToken) {
       const _session = await client
@@ -178,7 +178,7 @@ export const pgDrizzleAdapter = (
           ),
         )
         .returning()
-        .then((res) => res[0] ?? null);
+        .then((res) => res[0]!);
 
       return { provider, type, providerAccountId, userId };
     },
