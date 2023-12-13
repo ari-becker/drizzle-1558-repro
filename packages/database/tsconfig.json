@@ -2,9 +2,14 @@
   "extends": "@local/tsconfig/library.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
   },
-  "include": ["**/*.ts"],
-  "exclude": ["dist", "node_modules"],
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
   "references": []
 }
